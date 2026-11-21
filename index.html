@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Deterministik Şifre Güçlendirici</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="password-app">
+    <section class="card" aria-labelledby="appTitle">
+      <p class="eyebrow">Deterministik Dönüşüm</p>
+      <h1 id="appTitle">Şifreni Güçlendir</h1>
+      <p class="intro">Şifreni yaz, anında daha az tahmin edilebilir hale gelsin.</p>
+
+      <label class="field-label" for="passwordInput">Girdi şifre</label>
+      <input
+        id="passwordInput"
+        type="text"
+        autocomplete="off"
+        spellcheck="false"
+        placeholder="Örnek: Selim"
+        aria-describedby="strengthReasons"
+      >
+
+      <div class="result-head">
+        <label class="field-label" for="passwordOutput">Güçlendirilmiş şifre</label>
+        <div id="strengthBadge" class="badge badge-empty">Hazır</div>
+      </div>
+
+      <input
+        id="passwordOutput"
+        type="text"
+        readonly
+        placeholder="Dönüşmüş şifre burada görünecek"
+      >
+
+      <p id="strengthReasons" class="reasons">Şifre girince skor ve nedenler burada görünür.</p>
+
+      <div class="actions">
+        <button id="copyBtn" type="button" disabled>Kopyala</button>
+      </div>
+    </section>
+  </main>
+
+  <div id="toast" class="toast" role="status" aria-live="polite" aria-atomic="true"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
